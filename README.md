@@ -19,7 +19,7 @@ Player Service is a backend application that serves baseball player data. In add
       - Verify installation, run: `docker --version`
 
 2. Clone this repository or Download the code as zip
-   - run `git clone https://github.com/Intuit-A4A/player-service-python.git`
+   - run `git clone https://github.com/Intuit-A4A/backend-python-player-service.git`
 
 ## Run the application
 
