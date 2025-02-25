@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "a0202e64-65dc-4286-bcd4-f4de58ffe2ae",
+		"name": "player-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42132788"
+	},
+	"item": [
+		{
+			"name": "app",
+			"item": [
+				{
+					"name": "v1/players",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/v1/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "v1/players/{player_id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/v1/players/{{ player_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"players",
+								"{{ player_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "v1/chat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/v1/chat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "v1/chat/list-models",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/v1/chat/list-models",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"chat",
+								"list-models"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "model",
+			"item": [
+				{
+					"name": "team/generate id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"seed_id\": \"abbotji01\",\n    \"team_size\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8657/team/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8657",
+							"path": [
+								"team",
+								"generate"
+							]
+						},
+						"description": "Generated from cURL: curl -H \"Content-type: application/json\" -d '{\"seed_id\":\"abbotji01\",\"team_size\":10}' http://127.0.0.1:8657/team/generate\n{\"seed_id\":\"abbotji01\",\"prediction_id\":\"38f5f02f-b1be-4282-8d0e-865b3995d50a\",\"team_size\":10,\"member_ids\":[\"abbotji01\",\"combspa01\",\"maurero01\",\"cummijo01\",\"flemida01\",\"macdobo01\",\"eddych01\",\"morriha02\",\"mcgrifr01\",\"blossgr01\"]}"
+					},
+					"response": []
+				},
+				{
+					"name": "team/generate features",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"features\": {\n        \"birth_year\": 1970,\n        \"height\": 70,\n        \"weight\": 120,\n        \"bats\": \"R\",\n        \"throws\": \"L\"\n    },\n    \"team_size\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8657/team/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8657",
+							"path": [
+								"team",
+								"generate"
+							]
+						},
+						"description": "Generated from cURL: curl -H \"Content-type: application/json\" -d '{\"features\":{\"birth_year\":1970, \"height\":70, \"weight\":120, \"bats\":\"R\", \"throws\":\"L\"},\"team_size\":10}' http://127.0.0.1:8657/team/generate\n{\"seed_id\":null,\"prediction_id\":\"ddedf511-2e68-4ab5-87c5-c77b8d15eb23\",\"team_size\":10,\"member_ids\":[\"roblevi01\",\"deverra01\",\"goharlu01\",\"albieoz01\",\"barrefr02\",\"urenari01\",\"uriasju01\",\"verdual01\",\"mejiafr01\",\"sierrma01\"]}"
+					},
+					"response": []
+				},
+				{
+					"name": "team/feedback",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"seed_id\": \"abbotji01\",\n    \"member_id\": \"maurero01\",\n    \"feedback\": -1,\n    \"prediction_id\": \"38f5f02f-b1be-4282-8d0e-865b3995d50a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8657/team/feedback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8657",
+							"path": [
+								"team",
+								"feedback"
+							]
+						},
+						"description": "Generated from cURL: curl -H \"Content-type: application/json\"  -d '{\"seed_id\":\"abbotji01\",\"member_id\":\"maurero01\",\"feedback\":-1,\"prediction_id\":\"38f5f02f-b1be-4282-8d0e-865b3995d50a\"}' http://127.0.0.1:8657/team/feedback "
+					},
+					"response": []
+				},
+				{
+					"name": "llm/generate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"system_prompt\": \"\",\n    \"user_prompt\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8657/llm/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8657",
+							"path": [
+								"llm",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "llm/feedback",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"feedback\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8657/llm/feedback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8657",
+							"path": [
+								"llm",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ollama",
+			"item": [
+				{
+					"name": "api/generate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"model\": \"tinyllama\",\"prompt\": \"why is the sky blue?\", \"stream\": false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:11434/api/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "11434",
+							"path": [
+								"api",
+								"generate"
+							]
+						},
+						"description": "Generated from cURL: curl -v --location 'http://localhost:11434/api/generate' --header 'Content-Type: application/json' --data '{\"model\": \"tinyllama\",\"prompt\": \"why is the sky blue?\", \"stream\": false}'"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
