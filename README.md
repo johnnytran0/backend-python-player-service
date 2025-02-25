@@ -91,3 +91,15 @@ Having trouble with docker? Try using podman as an alternative. Instructions [he
 
 2. Open your browser and visit `http://localhost:8000/v1/chat/list-models`
    - If the application is running successfully, you will see a json response that include information about tinyllama
+
+# References
+https://docs.pydantic.dev/2.10/
+https://docs.pytest.org/en/8.3.x/reference/
+https://docs.python.org/3/library/sqlite3.html
+https://docs.python.org/3/library/unittest.mock.html
+https://docs.sqlalchemy.org/en/20/
+https://flask.palletsprojects.com/en/stable/
+https://flask-caching.readthedocs.io/en/latest/
+https://github.com/ollama/ollama/blob/v0.3.3/docs/api.md
+https://pandas.pydata.org/docs/
+https://www.sqlite.org/docs.html
